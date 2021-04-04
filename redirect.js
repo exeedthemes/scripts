@@ -36,7 +36,6 @@ var aesCrypto = {};
     }
 }(aesCrypto);
 
-
 if (script_auto_random_post == 'on') {
     var hasilgetlinkarp = false;
     $.ajax({
