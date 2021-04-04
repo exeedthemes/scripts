@@ -2,7 +2,7 @@
 //<![CDATA[
 //---------- Setting Auto Generate -----------
 script_auto_random_post = 'on';
-direct_to_link = 'https://down-smx365.blogspot.com';
+direct_to_link = 'downx365.tech';
 type_direct = 'all'; //all or only
 no_direct_domain = 'facebook.com,wa.me';
 only_direct_domain = 'drive.google.com,domainlain.com';
