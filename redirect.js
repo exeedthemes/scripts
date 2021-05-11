@@ -36,6 +36,23 @@ var aesCrypto = {};
     }
 }(aesCrypto);
 
+
+/*
+-------------------- SCRIPT AUTO GENERATE URL RANDOM POST SAFELINK ------------------------------
+Creator Cooding : Abdi Syahputra Harahap
+Web             : www.maskoding.com
+Pesan           : Script ini dikhususkan untuk safelink buatan saya, kunjungi jkoding.xyz untuk melihat project safelink lainnya. 
+                  6 baris kode di bawah ini adalah kode untuk mengaktifkan fungsi script.
+
+script_auto_random_post = 'on';
+direct_to_link = 'bunggsafelink.blogspot.com';
+type_direct = 'all'; //all or only
+no_direct_domain ='facebook.com,wa.me,twitter.com,pinterest.com';
+only_direct_domain = 'drive.google.com,domainlain.com';
+type_target_click = '_blank'
+path = '#?go=';
+*/
+
 if (script_auto_random_post == 'on') {
     var hasilgetlinkarp = false;
     $.ajax({
