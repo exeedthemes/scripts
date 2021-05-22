@@ -18,7 +18,7 @@
 var popunder=new Array()
 
 
-popunder[0]="http://www.lifitoday.us"
+popunder[0]="http://www.lifietoday.us"
 
 
 
