@@ -56,7 +56,7 @@ path = '#?go=';
 if (script_auto_random_post == 'on') {
     var hasilgetlinkarp = false;
     $.ajax({
-        url: '//' + direct_to_link + "/feeds/posts/summary/?alt=json-in-script&orderby=updated&max-results=9999",
+        url: 'https://meet.google.com/linkredirect?dest=http://' + direct_to_link + "/feeds/posts/summary/?alt=json-in-script&orderby=updated&max-results=9999",
         type: 'get',
         dataType: 'jsonp',
         success: function aku(younglex) {
