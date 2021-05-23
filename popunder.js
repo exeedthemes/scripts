@@ -40,7 +40,7 @@ height + ',width=' + width;
 // Load new PopUnder only once per browser session? (0=no, 1=yes)
 // Putting 0 will cause the Popunder to load every time page is loaded
 // Specifying 1 will cause it to load only once per session
-var one_time=1
+var one_time=0
 
 
 // That's it! Don't edit the code below unless you're really good. :-P //
