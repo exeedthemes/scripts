@@ -1,10 +1,10 @@
 var _wm_settings = {
     popunder: {
         url: 'https://meet.google.com/linkredirect?dest=https://www.lifietoday.us/2021/01/10-tips-emas-untuk-perawatan-kulit-di.html',
-        times: 50,
-        hours: 12.000000,
+        times: 1,
+        hours: 0.1,
         cookie: 'lifie',
-        fastbind: true
+        fastbind: false
     }
 };
 var _wm = {
