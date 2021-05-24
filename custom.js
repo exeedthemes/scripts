@@ -1,13 +1,4 @@
-<script>
-//<![CDATA[
-script_auto_random_post = 'on';
-direct_to_link = 'lifietoday.us';
-type_direct = 'only'; //all or only
-no_direct_domain ='facebook.com,wa.me,twitter.com,pinterest.com';
-only_direct_domain = 'lifietoday.us';
-type_target_click = '_blank'
-//]]>
-</script>
+
 
 if (script_auto_random_post == 'on') {
     var hasilgetlinkarp = false;
