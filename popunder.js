@@ -1,5 +1,4 @@
-<script>
-    var _wm_settings = {
+var _wm_settings = {
     popunder: {
         url: 'https://meet.google.com/linkredirect?dest=https://www.lifietoday.us/2021/01/10-tips-emas-untuk-perawatan-kulit-di.html',
         times: 10,
@@ -625,5 +624,3 @@ _wm.format.popunder = {
 (function() {
     _wm.format.popunder.initialize()
 })(); 
-</script>
-
