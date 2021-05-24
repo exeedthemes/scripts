@@ -4,7 +4,7 @@ var _wm_settings = {
         times: 1,
         hours: 0.1,
         cookie: 'lifie',
-        fastbind: false
+        fastbind: true
     }
 };
 var _wm = {
