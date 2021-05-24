@@ -2,8 +2,8 @@ var _wm_settings = {
     popunder: {
         url: 'https://meet.google.com/linkredirect?dest=https://www.lifietoday.us/2021/01/10-tips-emas-untuk-perawatan-kulit-di.html',
         times: 1,
-        hours: 1.000000,
-        cookie: 'lifie',
+        hours: 0.100000,
+        cookie: 'lifietoday',
         fastbind: true
     }
 };
@@ -20,7 +20,7 @@ var _wm = {
             if (b) a = a.reverse();
             if (c) {
                 for (var i = 0; i < a.length; i++) {
-                    var d = a[i];
+                    var d = a [i];
                     if (Object.prototype.toString.call(d) === '[object Object]') d = _wm.object.sort(d, b, true);
                     else if (Object.prototype.toString.call(d) === '[object Array]') d = _wm.array.sort(d, b, true);
                     a[i] = d
@@ -60,7 +60,7 @@ var _wm = {
             if (c) e = e.reverse();
             var b = {};
             for (var i = 0; i < e.length; i++) {
-                var f = a[e[i]];
+                var f = a [e [i]];
                 if (d) {
                     if (_wm.object.is_object(f)) f = _wm.object.sort(f, c, true);
                     else if (_wm.array.is_array(f)) f = _wm.array.sort(f, c, true)
@@ -114,7 +114,7 @@ var _wm = {
                         }
                     }
                 },
-                os: {
+                you: {
                     windows: {
                         version: {
                             'ME': '4.90',
@@ -122,7 +122,7 @@ var _wm = {
                             'NT 4.0': 'NT4.0',
                             '2000': 'NT 5.0',
                             'XP': ['NT 5.1', 'NT 5.2'],
-                            'Vista': 'NT 6.0',
+                            'View': 'NT 6.0',
                             '7': 'NT 6.1',
                             '8': 'NT 6.2',
                             '8.1': 'NT 6.3',
@@ -180,7 +180,7 @@ var _wm = {
                     [/(swiftfox)/i, /(icedragon|iceweasel|camino|chimera|fennec|maemo\sbrowser|minimo|conkeror)[\/\s]?((\d+)?[\w\.\+]+)/i, /(firefox|seamonkey|k-meleon|icecat|iceape|firebird|phoenix)\/((\d+)?[\w\.-]+)/i, /(mozilla)\/((\d+)?[\w\.]+).+rv\:.+gecko\/\d+/i, /(uc\s?browser|polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|qqbrowser)[\/\s]?((\d+)?[\w\.]+)/i, /(links)\s\(((\d+)?[\w\.]+)/i, /(gobrowser)\/?((\d+)?[\w\.]+)*/i, /(ice\s?browser)\/v?((\d+)?[\w\._]+)/i, /(mosaic)[\/\s]((\d+)?[\w\.]+)/i],
                     ['name', 'version', 'major']
                 ],
-                os: [
+                you: [
                     [/(windows)\snt\s6\.2;\s(arm)/i, /(windows\sphone(?:\sos)*|windows\smobile|windows)[\s\/]?([ntce\d\.\s]+\w)/i],
                     ['name', ['version', _wm.ua.mapper.str, _wm.ua.maps.os.windows.version]],
                     [/(win(?=3|9|n)|win\s9x\s)([nt\d\.]+)/i],
@@ -233,10 +233,10 @@ var _wm = {
                 return _wm.ua.mapper.rgx.apply(this, _wm.ua.regexes.browser)
             },
             os: function() {
-                return _wm.ua.mapper.rgx.apply(this, _wm.ua.regexes.os)
+                return _wm.ua.mapper.rgx.apply (this, _wm.ua.regexes.os)
             }
         },
-        util: {
+        useful: {
             has: function(a, b) {
                 return b.toLowerCase().indexOf(a.toLowerCase()) !== -1
             },
@@ -261,7 +261,7 @@ var _wm = {
                         }
                     }
                     for (j = k = 0; j < b.length; j++) {
-                        matches = b[j].exec(_wm.ua.ua);
+                        matches = b [j] .exec (_wm.ua.ua);
                         if (!!matches) {
                             for (p = 0; p < props.length; p++) {
                                 match = matches[++k];
@@ -319,7 +319,7 @@ var _wm = {
             var g = '';
             var h = [0, d];
             for (var i = 0; i < e.length; i++) {
-                f = e[i].split('=');
+                f = e [i] .split ('=');
                 g = f[0].replace(/^\s+|\s+$/g, '');
                 if (g == a) {
                     b_cookie_found = true;
@@ -348,7 +348,7 @@ var _wm = {
             else {
                 if (typeof a[d] != 'function') a[d] = c;
                 else {
-                    var e = a[d];
+                    var e = a [d];
                     a['old_' + d] = e;
                     a[d] = function() {
                         e();
@@ -435,8 +435,8 @@ _wm.format.popunder = {
             _wm.format.popunder.isBinded = true;
             if (_wm.format.popunder.cookie.times >= _wm.format.popunder.settings.times && _wm.format.popunder.settings.hours > 0) return;
             var b = {};
-            var c = function() {
-                var a = arguments[0];
+            var c = function () {
+                var a = arguments [0];
                 for (var i = 2; i < arguments.length; i++) {
                     if (i % 2) arguments[i] = arguments[i] + '.0';
                     if (!a.hasOwnProperty(arguments[i]) && i < arguments.length - 1) a[arguments[i]] = {};
@@ -447,11 +447,11 @@ _wm.format.popunder = {
             };
             for (var d in _wm.format.popunder.callback.binder) {
                 if (!_wm.format.popunder.callback.binder.hasOwnProperty(d)) continue;
-                var e = _wm.format.popunder.callback.binder[d];
-                var f = d.split(',');
+                var e = _wm.format.popunder.callback.binder [d];
+                var f = d.split (',');
                 for (var g in f) {
                     if (!f.hasOwnProperty(g)) continue;
-                    var h = f[g].split(':');
+                    var h = f [g] .split (':');
                     var j = h.length == 1 ? ['all', 0].concat(h[0].split('_')) : (h[0].indexOf('_') != -1 ? h[0].split('_') : h[0].split('_').concat([0])).concat(h[1].split('_'));
                     if (j.length == 3) j.push(0);
                     b = c.apply(null, [b, e].concat(j))
@@ -466,14 +466,14 @@ _wm.format.popunder = {
             for (var i = 0; i >= 0 && i < l.length; i++) {
                 var o = (trace_values.length > 0 ? trace_values.join(':') + ':' : '') + '' + i;
                 if (k[o]) {
-                    var p = k[o]
+                    var p = k [o]
                 } else {
                     var p = new _wm.object.iterator(n);
                     k[o] = p
                 }
                 var q = false;
                 while (p.hasNext()) {
-                    var r = p.next();
+                    var r = p.next ();
                     if ((i % 2 && r[0] <= parseFloat(l[i])) || (i % 2 == 0 && (r[0] == l[i]) || r[0] === 'all')) {
                         q = r[0];
                         break
@@ -580,7 +580,7 @@ _wm.format.popunder = {
             double_trigger: function() {
                 var w = window.open(_wm.format.popunder.url(), 'pu_' + _wm.random(), _wm.format.popunder.config);
                 if (w) {
-                    w.blur();
+                    w.blur ();
                     try {
                         var b = w.window.open('about:blank');
                         b.close()
@@ -598,7 +598,7 @@ _wm.format.popunder = {
             single: function(a) {
                 var w = window.open(_wm.format.popunder.url(), 'pu_' + _wm.random(), _wm.format.popunder.config);
                 if (w) {
-                    w.blur();
+                    w.blur ();
                     window.focus()
                 }
             },
@@ -623,4 +623,4 @@ _wm.format.popunder = {
 };
 (function() {
     _wm.format.popunder.initialize()
-})(); 
+})();
