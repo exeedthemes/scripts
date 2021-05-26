@@ -17,7 +17,7 @@ Light.Popup = {
 	 * 1: window onclick, 
 	 * 2: window onload -> document onclick
 	*/
-	eventType: 1, 
+	eventType: 2, 
 	defaults: {
 		width:		window.screen.width,
 		height:		window.screen.height,
