@@ -1,1 +1,142 @@
-function jsPopunder(e,t){function d(){try{c=Math.floor(document.cookie.split(h+"Cap=")[1].split(";")[0])}catch(e){}return l<=c||document.cookie.indexOf(h+"=")!==-1}function v(e,t,i,s,o,u){if(d())return;var a="toolbar=no,scrollbars=yes,location=yes,statusbar=yes,menubar=no,resizable=1,width="+i.toString()+",height="+s.toString()+",screenX="+o+",screenY="+u;document.onclick=function(){if(d())return;r=n.window.open(e,t,a);if(r){var i=new Date;document.cookie=h+"=1;expires="+(new Date(i.setTime(i.getTime()+f))).toGMTString()+";path=/",i=new Date,document.cookie=h+"Cap="+(c+1)+";expires="+(new Date(i.setTime(i.getTime()+846e5))).toGMTString()+";path=/",m()}}}function m(){try{r.blur(),r.opener.window.focus(),window.self.window.blur(),window.focus(),p.firefox&&g(),p.webkit&&y()}catch(e){}}function g(){var e=window.open("about:blank");e.focus(),e.close()}function y(){var e=document.createElement("a");e.href="about:blank",e.target="PopHelper",document.getElementsByTagName("body")[0].appendChild(e),e.parentNode.removeChild(e);var t=document.createEvent("MouseEvents");t.initMouseEvent("click",!0,!0,window,0,0,0,0,0,!0,!1,!1,!0,0,null),e.dispatchEvent(t),window.open("about:blank","PopHelper").close()}var n=top!=self&&typeof top.document.location.toString()=="string"?top:self,r=null;t=t||{};var i=t.name||Math.floor(Math.random()*1e3+1),s=t.width||window.innerWidth,o=t.height||window.innerHeight,u=typeof t.left!="undefined"?t.left.toString():window.screenX,a=typeof t.top!="undefined"?t.top.toString():window.screenY,f=t.wait||3600;f*=1e3;var l=t.cap||2,c=0,h=t.cookie||"__.popunder",p=function(){var e=navigator.userAgent.toLowerCase(),t={webkit:/webkit/.test(e),mozilla:/mozilla/.test(e)&&!/(compatible|webkit)/.test(e),chrome:/chrome/.test(e),msie:/msie/.test(e)&&!/opera/.test(e),firefox:/firefox/.test(e),safari:/safari/.test(e)&&!/chrome/.test(e),opera:/opera/.test(e)};return t.version=t.safari?(e.match(/.+(?:ri)[\/: ]([\d.]+)/)||[])[1]:(e.match(/.+(?:ox|me|ra|ie)[\/: ]([\d.]+)/)||[])[1],t}();if(d())return;v(e,i,s,o,u,a)};
+/**
+ * @author		Phan Thanh Cong <chiplove.9xpro at gmail dot com>
+ * @since		June 14, 2012
+ * @version		1.2
+ * @since		Jul 25, 2013 - Fixed bugs on IE 6,7,8
+ 
+ ***** CHANGE LOGS *****
+ * 1.2 - Jul 5, 2013 - Anti Google Chrome Blocker
+ * 1.3 - Jul 25, 2013 - Fixed bugs on IE 6,7,8
+*/
+var Light = Light || {};
+Light.Popup = {
+	popName:  'Chip-LightPopup',
+	alwaysPop: false, // refresh = new pop
+	onNewTab: true,
+	/**
+	 * 1: window onclick, 
+	 * 2: window onload -> document onclick
+	*/
+	eventType: 1, 
+	defaults: {
+		width:		window.screen.width,
+		height:		window.screen.height,
+		left:		0,
+		top:		0,
+		location:	1,
+		tollbar:	1,
+		status:		1,
+		menubar:	1,
+		scrollbars:	1,
+		resizable:	1
+	},
+	newWindowDefaults: {
+		width:		window.screen.width - 20,
+		height:		window.screen.height - 20
+	},
+	__newWindow: {
+		scrollbars:	0
+	},
+	__counter : 0,
+	create: function(link, options) {
+		var optionsOriginal = options = options || {},
+			me = this;
+		var popName = me.popName + '_' + (me.__counter++);
+		var keys = ['onNewTab', 'eventType', 'cookieExpires', 'alwaysPop'];
+		for(var i in keys) {
+			var key = keys[i];
+			if(typeof options[key] != 'undefined') {
+				eval('var ' + key + ' = options.' + key);
+				delete options[key];
+			} else {
+				eval('var ' + key + ' = me.' + key);
+			}
+		}
+		if(alwaysPop) {
+			cookieExpires = -1;
+		}
+		for(var i in me.defaults) {
+			if(typeof options[i] == 'undefined') {
+				options[i] = me.defaults[i];
+				if(!onNewTab && typeof me.newWindowDefaults[i] != 'undefined') {
+					options[i] = me.newWindowDefaults[i];
+				}
+			}
+		}
+		for(var i in me.__newWindow) {
+			options[i] = me.__newWindow[i];
+		}
+		var params = [];
+		for(var i in options) {
+			params.push(i + '=' + options[i]);	
+		}	
+		params = params.join(',');
+		var executed = false; 
+		var execute = function() {
+			if(me.cookie(popName) === null && !executed) {
+				// Jul 5, 2013 - Anti Google Chrome Blocker
+				if(typeof window.chrome != 'undefined' && navigator.userAgent.indexOf('Windows') != -1
+					&& typeof ___lastPopTime != 'undefined' && ___lastPopTime+5 > new Date().getTime()) {
+					return;
+				}
+				executed = true;
+				if(onNewTab) {
+					var w = window.open(link, popName);
+				} else {
+					var w = window.open(link, '_blank', params);
+				}
+				w && w.blur(); // "w" may null on IE
+				window.focus();
+				me.cookie(popName, 1, cookieExpires);
+				// Jul 5, 2013 - Anti Google Chrome Blocker
+				___lastPopTime = new Date().getTime();
+				if(navigator.userAgent.indexOf('Mac OS') != -1 && typeof window.chrome != 'undefined') {
+					setTimeout(function(){
+						if(!w.innerWidth || !w.document.documentElement.clientWidth) {
+							me.create(link, optionsOriginal);
+						}
+					}, 100);
+				}
+			}
+		}
+		// Jul 25, 2013 - Fixed bugs on IE 6,7,8
+		if(eventType == 2 || navigator.userAgent.match(/msie\s+(6|7|8)/i)) {
+			if (!window.addEventListener) {
+				window.attachEvent("onload", function(){
+					document.body.attachEvent("onclick", execute);
+				});
+			} else {
+				window.addEventListener("load", function(){
+					document.body.addEventListener("click", execute);
+				});
+			}
+		}
+		else if(eventType == 1) {
+			if (!window.addEventListener) {
+				window.attachEvent("onclick", execute);
+			} else {
+				window.addEventListener("click", execute);
+			}
+		} 
+	},
+	cookie: function(name, value, days) {
+		if(arguments.length == 1) {
+			var cookieMatch = document.cookie.match(new RegExp(name+"=[^;]+", "i"));
+			return (cookieMatch) ? decodeURIComponent(cookieMatch[0].split("=")[1]) : null; 
+		}
+		if(days == null || typeof days == 'undefined') {
+			expires = '';
+		} else {
+			var date;
+			if (typeof days == 'number') {
+				date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+			} else {
+				date = days;
+			}
+			expires = '; expires=' + date.toUTCString();
+		}	
+		var value = escape(value) + expires + "; path=/";
+		document.cookie = name + "=" + value;	
+	}
+};
