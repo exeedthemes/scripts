@@ -89,7 +89,7 @@ function a()
 							{
 							setTimeout(function()
 								{
-								window.location.href='#
+								window.location.href='#?ref='+window.location.host
 							}
 							,1000)
 						}
@@ -100,7 +100,7 @@ function a()
 							{
 							setTimeout(function()
 								{
-								window.location.href='h#
+								window.location.href='#?ref='+window.location.host
 							}
 							,1000)
 						}
