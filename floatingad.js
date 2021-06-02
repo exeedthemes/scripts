@@ -1,13 +1,3 @@
-if(typeof jQuery === 'undefined') {
-    var headTag = document.getElementsByTagName("head")[0];
-    var jqTag = document.createElement('script');
-   	jqTag.type = 'text/javascript';
-   	jqTag.src = 'https://code.jquery.com/jquery-1.7.2.min.js';
-    jqTag.onload = jq_show;
-    headTag.appendChild(jqTag);
-} else {
-	jq_show();
-}
 function jq_show() {
 	jQuery(document).ready(function() {
 	if(typeof window.yxsc=='undefined') {
