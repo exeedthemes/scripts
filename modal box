@@ -1,0 +1,26 @@
+<div><a class='shownotif' href='javascript:;' title='Show Notification'><i aria-hidden='true' class='fa fa-bell'></i></a></div>
+
+<style>
+/* Modal Box */
+.asalseonotif,.matilampu{visibility:hidden;opacity:0}.asalseonotif{background:#fff;position:fixed;padding:25px;top:20%;transform:scale(1.2);max-width:450px;margin:auto;left:0;right:0;z-index:100;border-radius:4px;box-shadow:0 10px 3rem -1rem rgba(0,0,0,0.5);transition:all .5s}.asalseonotif button{border:none;position:absolute;margin-top:17px;right:30px;cursor:pointer;background:#e8e8e8;padding-left:7px;outline:0}a.waves-light.close-sf{background:#2ecc71;color:#fff;margin-top:15px;display:inline-block;padding:6px 13px;border-radius:3px;float:right;font-size:13px}a.waves-light.close-sf:hover{background:#2bc063;color:#fff}.matilampu{position:fixed;top:0;background:rgba(255,255,255,0.39);left:0;right:0;bottom:0;margin:0;z-index:99;transition:all .4s ease-in-out}.asalseotitle{margin-bottom:15px;font-weight:600}.asalseonotif.aktif,.matilampu.aktif{visibility:visible;opacity:1}.asalseonotif.aktif{transform:scale(1)}.icx{position:absolute;top:10px;right:15px;transform:rotate(180deg);transition:all .3s}.icx:before{content:&#39;\f00d&#39;;font-family:fontawesome;font-size:18px;color:#ccc;transition:all .3s}.icx:hover{transform:rotate(360deg)}.icx:hover:before{color:#222}.notiftext{font-size:14px}a.shownotif{background:#f39c12;color:#fff;font-size:16px;padding:0;position:absolute;right:80px;top:15px;width:35px;height:35px;line-height:35px;text-align:center;border-radius:99em;transition:all .3s}a.shownotif:hover{background:#e67e22;color:#fff}
+#menuheady.aktif,#pagepix.aktif,#downpix.aktif{filter-blur(4px):;-webkit-filter:blur(4px)}
+@media screen and (max-width:768px){.asalseonotif,a.shownotif,.matilampu{display:none}}
+</style>
+
+
+<script>
+// Modal box
+$(document).ready(function(){$(".close-sf").click(function(){$(".asalseonotif,.matilampu,#menuheady,#pagepix,#downpix").removeClass("aktif")})}),$(document).ready(function(){$(".shownotif").click(function(){$(".asalseonotif,.matilampu,#menuheady,#pagepix,#downpix").toggleClass("aktif")})});
+</script>
+
+
+
+<div class='asalseonotif'>
+<div class='asalseotitle'>Selamat Datang Di  Website Nandea96</div>
+<div class='notiftext'>
+Mohon untuk selalu mencuci tangan dengan air bersih serta sabun setiap 15 menit sekali agar terhindar dari covid-19 dan penyakit lainnya seperti diare. selalu gunakan masker ketika berpergian kemanapun 😷. meskipun itu hanya berbelanja sekitar 0.1 km atau ke tetangga. hindari kontak fisik dan beri jarak sekitar 2 meter dari jarak tempat kita berdiri dengan seseorang agar tidak memunculkan klaster baru yang tidak di-inginkan.<br/><br/>
+<center>-Terimakasih 🙏-</center></div>
+<a class='waves-effect waves-light close-sf' href='javascript:;' title='Done'>Done</a>
+<a class='waves-effect icx close-sf' href='javascript:;'></a>
+</div>
+<div class='matilampu'></div>
