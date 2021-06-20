@@ -1,5 +1,5 @@
 function convert() {
-    var ele1 = document.getElementById("somewhere1");
+    var ele1 = document.getElementById("somewhere");
     var replaced;
     replaced = ele1.value;
     replaced = replaced.replace("&amp;", /&/ig);
@@ -12,16 +12,16 @@ function convert() {
     replaced = replaced.replace("&reg;", /&#174;/ig);
     replaced = replaced.replace("ya'll", /ya'll/ig);
     ele1.value = replaced;
-	document.getElementById("button-link1")
+	document.getElementById("button-link")
         .style.display = "inline-block";
-    document.getElementById("btn_clear1")
+    document.getElementById("btn_clear")
         .style.display = "inline-block";
 }
 function cdClear() {
-  var wtarea = document.getElementById('somewhere1');
+  var wtarea = document.getElementById('somewhere');
   wtarea.value = '';
-  document.getElementById("btnInfo1")
-        .style.display = "none",document.getElementById("button-link1")
+  document.getElementById("btnInfo")
+        .style.display = "none",document.getElementById("button-link")
         .style.display = "none"
 }
 
