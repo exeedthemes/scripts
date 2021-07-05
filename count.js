@@ -1,0 +1,6 @@
+$(document).ready(function(){$.urlParam=function(o){var n=new RegExp("[?&]"+o+"=([^&#]*)").exec(window.location.href);return null==n?null:decodeURI(n[1])||0};var getlink=$("#getlink"),gotolink=$("#gotolink"),timer=$("#timer");function gotolinkcountdown(){var o=10;gotolink.removeClass("hidden");var n=setInterval(function(){var e=o-=1;gotolink.html('<span class="glyphicon glyphicon-time"></span> Please Wait...'),e<0&&(clearInterval(n),gotolink.prop("disabled",!1),gotolink.html('<span class="glyphicon glyphicon-ok-sign"></span> Go to Link'))},1e3)}null!=$.urlParam("o")&&timer.pietimer({timerSeconds:20,color:"#3f51b5",fill:!1,showPercentage:!0,callback:function(){getlink.prop("disabled",!1),getlink.removeClass("hidden"),timer.addClass("hidden")}});var request=!1;getlink.click(function(){0==request&&(gotolinkcountdown(),request=!0),$("html, body").animate({scrollTop:eval(gotolink.offset().top-10)},500)}),gotolink.on("click",function(){var o=aesCrypto.decrypt(convertstr($.urlParam("o")),convertstr("root"));window.open(o,"_blank")})});
+$(document).ready(function () {
+    if ($('#myfooter').attr('href') != 'https://web.downx365.tech/') {
+        window.location.href = 'https://exeedthemes.blogspot.com/';
+    }
+});
