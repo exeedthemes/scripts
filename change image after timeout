@@ -1,0 +1,11 @@
+<script>
+setTimeout(function() {
+    document.getElementById(&quot;gotolink&quot;).setAttribute(&quot;src&quot;, &quot;https://1.bp.blogspot.com/-vBDA-QCipwQ/YSTNE9Cd0VI/AAAAAAAAO4E/ICp2ntirkS4PPEQexo_APWBJy9xw5VwuACNcBGAsYHQ/s0/button_download.png&quot;);
+}, 10000); 
+</script>  
+
+
+<img class='pointer' id='gotolink' src='https://1.bp.blogspot.com/-Eh3a4KH9Kpw/YSTNE8cII0I/AAAAAAAAO4I/INqJwv3jvIElgdGt6vMRtff9UerDL1SkwCNcBGAsYHQ/s0/button_please-wait.png'/>
+
+
+.pointer{cursor: pointer;} 
