@@ -1,6 +1,6 @@
         let adUrls = [
-            "https://example1.com",  // Replace with your ad URL 1
-            "https://example2.com"   // Replace with your ad URL 2
+            "https://short.lokuads.com/pCkc5",  // Replace with your ad URL 1
+            "https://short.lokuads.com/4284S"   // Replace with your ad URL 2
         ];
         let interval = 10000; // 10 seconds
         let adIndex = 0;
